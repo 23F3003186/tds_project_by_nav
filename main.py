@@ -27,6 +27,9 @@ class TaskRequest(BaseModel):
     checks: List[str]
     evaluation_url: str
     attachments: Optional[List[Attachment]] = []
+@app.get("/")
+def home():
+    return "working"
 
 @app.post("/api/task")
 async def receive_task(req: TaskRequest):
